@@ -1,0 +1,114 @@
+<icecast>
+    <limits>
+        <clients>7</clients>
+        <sources>128</sources>
+        <threadpool>5</threadpool>
+        <queue-size>1048576</queue-size>
+        <client-timeout>30</client-timeout>
+        <header-timeout>15</header-timeout>
+        <source-timeout>30</source-timeout>
+        <burst-on-connect>1</burst-on-connect>
+        <burst-size>262140</burst-size>
+    </limits>
+
+    <authentication>
+        <!-- Sources log in with username 'source' -->
+        <source-password>rv</source-password>
+        <!-- Relays log in username 'relay' -->
+        <relay-password>***</relay-password>
+
+        <admin-user>admin</admin-user>
+        <admin-password>***</admin-password>
+    </authentication>
+
+    <hostname>10.10.10.10</hostname>
+
+    <listen-socket>
+        <port>8008</port>
+    </listen-socket>
+
+    <fileserve>1</fileserve>
+
+    <paths>
+	<!-- basedir is only used if chroot is enabled -->
+	<basedir>/usr/local/share/icecast</basedir>
+
+        <!-- Note that if <chroot> is turned on below, these paths must both
+             be relative to the new root, not the original root -->
+        <logdir>/usr/local/var/icecast</logdir>
+        <webroot>/usr/local/share/icecast/web</webroot>
+        <adminroot>/usr/local/share/icecast/admin</adminroot>
+        <pidfile>/usr/local/share/icecast/icecast.pid</pidfile>
+
+        <alias source="/" dest="/status.xsl"/>
+    </paths>
+
+    <logging>
+        <accesslog>access.log</accesslog>
+        <errorlog>error.log</errorlog>
+        <playlistlog>playlist.log</playlistlog>
+      	<loglevel>3</loglevel> <!-- 4 Debug, 3 Info, 2 Warn, 1 Error -->
+      	<logsize>10000</logsize> <!-- Max size of a logfile -->
+        <!-- If logarchive is enabled (1), then when logsize is reached
+             the logfile will be moved to [error|access|playlist].log.DATESTAMP,
+             otherwise it will be moved to [error|access|playlist].log.old.
+             Default is non-archive mode (i.e. overwrite)
+        -->
+        <!-- <logarchive>1</logarchive> -->
+    </logging>
+
+    <security>
+        <chroot>0</chroot>
+        <changeowner>
+            <user>icecast</user>
+            <group>sound</group>
+        </changeowner>
+    </security>
+
+	<relay>
+       	 <server>shoutcast.byfly.by</server>
+	        <port>88</port>
+	        <mount>/nashe256</mount>
+	        <local-mount>/nashe256</local-mount>
+	        <on-demand>1</on-demand>
+	        <relay-shoutcast-metadata>0</relay-shoutcast-metadata>
+	</relay>
+
+	<relay>
+       	 <server>shoutcast.byfly.by</server>
+	        <port>88</port>
+	        <mount>/difm_chillout</mount>
+	        <local-mount>/difm_chillout</local-mount>
+	        <on-demand>1</on-demand>
+	        <relay-shoutcast-metadata>0</relay-shoutcast-metadata>
+	</relay>
+
+	<relay>
+       	 <server>shoutcast.byfly.by</server>
+	        <port>88</port>
+	        <mount>/radiorecord192</mount>
+	        <local-mount>/radiorecord192</local-mount>
+	        <on-demand>1</on-demand>
+	        <relay-shoutcast-metadata>0</relay-shoutcast-metadata>
+	</relay>
+
+	<relay>
+       	 <server>shoutcast.byfly.by</server>
+	        <port>88</port>
+	        <mount>/aplus_rock</mount>
+	        <local-mount>/aplus_rock</local-mount>
+	        <on-demand>1</on-demand>
+	        <relay-shoutcast-metadata>0</relay-shoutcast-metadata>
+	</relay>
+
+	<relay>
+       	 <server>shoutcast.byfly.by</server>
+	        <port>88</port>
+	        <mount>/aplus_beat</mount>
+	        <local-mount>/aplus_beat</local-mount>
+	        <on-demand>1</on-demand>
+	        <relay-shoutcast-metadata>0</relay-shoutcast-metadata>
+	</relay>
+
+
+</icecast>
