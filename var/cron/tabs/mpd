@@ -1,0 +1,11 @@
+SHELL=/bin/sh
+PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin
+HOME=/var/log
+#
+#minute	hour	mday	month	wday	who	command
+#
+0 5 * * * /usr/local/etc/rc.d/musicpd restart
+0 19 * * 1,2,3,4,5 /usr/local/bin/mpc stop
+50 6 * * 1,2,3,4,5 /usr/local/bin/mpc stop
+0 17 * * 1,2,3,4,5 /usr/local/bin/mpc play
+0 6 * * 1,2,3,4,5 /usr/local/bin/mpc play
