@@ -1,0 +1,7 @@
+SHELL=/bin/sh
+PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin
+HOME=/var/log
+#
+#minute	hour	mday	month	wday	who	command
+#
+0,10,20,30,40,50 * * * * /mnt/dropbox/dropboxsync.sh
