@@ -5,7 +5,7 @@
 	Copyright RV(rvm.my.home.s@gmail.com )
 	All rights reserved.
 
-	part of FreeNAS (http://www.freenas.org)
+	Based on parts of FreeNAS (http://www.freenas.org)
 */
 require("auth.inc");
 require("guiconfig.inc");
